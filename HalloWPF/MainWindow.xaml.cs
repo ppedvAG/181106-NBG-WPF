@@ -24,5 +24,31 @@ namespace HalloWPF
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hallo Welt");
+        }
+
+        private void TextBox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("LabelMouseDown");
+            e.Handled = true; // kein weiteres bubbling
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("GridMouseDown");
+        }
+
+        private void Grid_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("GridPReviewMouseDown");
+        }
+
+        private void Label_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("LabelPreviewMouseDown");
+        }
     }
 }
