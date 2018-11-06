@@ -6,14 +6,37 @@
         xmlns:local="clr-namespace:HalloWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid MouseDown="Grid_MouseDown" PreviewMouseDown="Grid_PreviewMouseDown">
-        <Button 
-            Content="Button" HorizontalAlignment="Left" Margin="50" VerticalAlignment="Top" Width="75" />
-        <Label Background="MediumOrchid" Content="Klick mich - Tunneling und Bubbling"
-               MouseDown="TextBox_MouseDown"
-               Foreground="White" HorizontalAlignment="Left" Margin="50,74,0,0" VerticalAlignment="Top" Height="51" Width="147"/>
-        <Label PreviewMouseDown="Label_PreviewMouseDown" Content="Nur Tunneling" HorizontalAlignment="Left" Margin="50,138,0,0" VerticalAlignment="Top" Width="147"/>
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="120,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Click="MeinButtonClick" x:Name="meinKleinerButton" Content="1" HorizontalAlignment="Left" Margin="84,206,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Click="MeinButtonClick" x:Name="button2" Content="2" HorizontalAlignment="Left" Margin="172,202,0,0" VerticalAlignment="Top" Width="74"/>
 
+
+
+        <!--<Button Background="Plum" Content="Button" Margin="10,10,0,0" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="594"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button HorizontalAlignment="Left" Margin="222,209,0,0" VerticalAlignment="Top" Width="121">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Klick mich:"/>
+                    <CheckBox IsChecked="False"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Label BorderBrush="Black" BorderThickness="2"
+                HorizontalAlignment="Left" Margin="222,243,0,0" VerticalAlignment="Top">
+            <Label.Content>
+                <TextBox Text="Eine asdasdasdasdasdasd in einem Label"/>
+            </Label.Content>
+
+        </Label>
+
+        <TextBlock HorizontalAlignment="Left" Margin="222,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                   Text="abcde Welt 2"/>
+        <Calendar HorizontalAlignment="Left" Margin="482,114,0,0" VerticalAlignment="Top"/>-->
 
 
     </Grid>

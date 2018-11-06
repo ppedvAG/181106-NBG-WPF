@@ -25,30 +25,31 @@ namespace HalloWPF
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void MeinButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hallo Welt");
-        }
+            #region Objektidentität prüfen
+            //// if((sender as Button).Name == "button1")
+            //// if(sender.GetHashCode() == meinKleinerButton.GetHashCode() )
 
-        private void TextBox_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("LabelMouseDown");
-            e.Handled = true; // kein weiteres bubbling
-        }
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("GridMouseDown");
-        }
-
-        private void Grid_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("GridPReviewMouseDown");
-        }
-
-        private void Label_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("LabelPreviewMouseDown");
+            //if(sender is Button)
+            //{
+            //    // buttonlogik
+            //}
+            //else if (sender is TextBox)
+            //{
+            //    // ....
+            //}
+            //// Alternative:
+            //switch (sender)
+            //{
+            //    case Button b:
+            //        // b.Name // ..
+            //        break;
+            //    case TextBox t:
+            //        // t.
+            //        break;
+            //} 
+            #endregion
         }
     }
 }
