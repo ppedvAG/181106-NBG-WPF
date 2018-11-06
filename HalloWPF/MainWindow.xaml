@@ -85,4 +85,58 @@
         <Rectangle Grid.Row="2" Fill="MediumSlateBlue"/>
         
     </Grid>-->
+
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Speichern">
+                    <MenuItem Header="Speichern Unter..."/>
+                    <TextBox Width="100"/>
+                </MenuItem>
+                <MenuItem Header="Öffnen"/>
+                <Separator/>
+                <MenuItem Header="Beenden"/>
+            </MenuItem>
+            <MenuItem Header="Hilfe"/>
+            <TextBlock Text="Suche:"/>
+            <TextBox Width="400" Margin="0,5"/>
+        </Menu>
+
+
+        <Image
+            Stretch="UniformToFill" Margin="13,68,453.6,134"
+            Source="Icons/hamster.jpg"/>
+        <TextBox HorizontalAlignment="Left" Margin="366,80,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <PasswordBox HorizontalAlignment="Left" Margin="369,103,0,0" VerticalAlignment="Top" Width="200"/>
+        <RichTextBox HorizontalAlignment="Left" Height="42" Margin="369,125,0,0" VerticalAlignment="Top" Width="200">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <ComboBox x:Name="comboBoxItems" HorizontalAlignment="Left" Margin="369,189,0,0" VerticalAlignment="Top" Width="200">
+            <ComboBoxItem Content="Apfel"/>
+            <ComboBoxItem Content="Birne"/>
+            <ComboBoxItem Content="Banane"/>
+            <TextBox Width="150"/>
+            <Button Content="Button in meiner Combobox" Width="200"/>
+        </ComboBox>
+        <Slider Minimum="0"
+                Maximum="50"
+                TickPlacement="BottomRight"
+                IsSnapToTickEnabled="True"
+                TickFrequency="10"
+                HorizontalAlignment="Left" 
+                ValueChanged="Slider_ValueChanged"
+                Margin="369,245,0,0" VerticalAlignment="Top" Width="200"/>
+        <ProgressBar x:Name="progressBarWert" HorizontalAlignment="Left" Height="10" Margin="369,226,0,0" VerticalAlignment="Top" Width="197"/>
+        <Button Click="Button_Click" Content="Button" HorizontalAlignment="Left" Margin="620,88,0,0" VerticalAlignment="Top" Width="145"/>
+        <ListBox x:Name="listBoxWerte" HorizontalAlignment="Left" Height="144" Margin="620,125,0,0" VerticalAlignment="Top" Width="145"/>
+
+
+
+    </Grid>
+
 </Window>

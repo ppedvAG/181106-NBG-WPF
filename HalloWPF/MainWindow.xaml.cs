@@ -23,6 +23,8 @@ namespace HalloWPF
         public MainWindow()
         {
             InitializeComponent();
+
+            listBoxWerte.ItemsSource = new string[] {"Tom Ate", "Anna Nass", "Peter Silie", "Franz Ose", "Martha Pfahl", "Anna Bolika", "Frank N Stein"};
         }
 
         private void MeinButtonClick(object sender, RoutedEventArgs e)
@@ -50,6 +52,29 @@ namespace HalloWPF
             //        break;
             //} 
             #endregion
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            progressBarWert.Value = (sender as Slider).Value;
+            #region Nullable und ??
+            //var s1 = (Slider)sender;
+            //var s2 = sender as TextBox ?? new TextBox();
+
+            //// .NET Framework 2.0
+            //// Nullable Value Types
+            //int zahl1 = 5;
+            //int? zahl2 = null;
+
+            //zahl2 = 50;
+            //// Null-Coalescing Operator
+            //zahl1 = zahl2 ?? 0 ; 
+            #endregion
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxWerte.Items.Add("Pause ???");
         }
     }
 }
