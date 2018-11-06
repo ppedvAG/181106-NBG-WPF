@@ -6,14 +6,11 @@
         xmlns:local="clr-namespace:HalloWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="120,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+    <!--  <Grid> -->
+    <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="120,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Button Click="MeinButtonClick" x:Name="meinKleinerButton" Content="1" HorizontalAlignment="Left" Margin="84,206,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Click="MeinButtonClick" x:Name="button2" Content="2" HorizontalAlignment="Left" Margin="172,202,0,0" VerticalAlignment="Top" Width="74"/>
-
-
-
-        <!--<Button Background="Plum" Content="Button" Margin="10,10,0,0" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="594"/>
+        <Button Click="MeinButtonClick" x:Name="button2" Content="2" HorizontalAlignment="Left" Margin="172,202,0,0" VerticalAlignment="Top" Width="74"/>-->
+    <!--<Button Background="Plum" Content="Button" Margin="10,10,0,0" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="594"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,114,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
@@ -37,7 +34,55 @@
         <TextBlock HorizontalAlignment="Left" Margin="222,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    Text="abcde Welt 2"/>
         <Calendar HorizontalAlignment="Left" Margin="482,114,0,0" VerticalAlignment="Top"/>-->
+    <!-- </Grid> -->
 
+    <!--<ScrollViewer VerticalScrollBarVisibility="Hidden"
+                  HorizontalScrollBarVisibility="Disabled">
+        <StackPanel>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <Button Content="Mein Button" Width="600"/>
+            <TextBox Text="abcde" />
+        </StackPanel>
+    </ScrollViewer>-->
 
-    </Grid>
+    <!--<DockPanel>
+        <StackPanel Background="Chartreuse"
+                   DockPanel.Dock="Right"
+                   Width="100">
+            <Button Content="ABCDE"/>
+            <Button Content="ABCDE"/>
+            <Button Content="ABCDE"/>
+            <Button Content="ABCDE"/>
+        </StackPanel>
+        <Rectangle Fill="MediumAquamarine"
+                   Height="50"
+                   DockPanel.Dock="Top"/>
+        <Rectangle Fill="LemonChiffon"
+                   DockPanel.Dock="Left"/>
+    </DockPanel>-->
+
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Button Content="ABCDE" FontSize="50"/>
+        <Rectangle Grid.Row="1" Fill="Tomato"/>
+        <Rectangle Grid.Row="2" Fill="MediumSlateBlue"/>
+        
+    </Grid>-->
 </Window>
