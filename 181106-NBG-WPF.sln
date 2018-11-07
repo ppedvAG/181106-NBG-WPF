@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ressourcen", "Ressourcen\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleDemo", "StyleDemo\StyleDemo.csproj", "{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpezialSliderTemplate", "SpezialSliderTemplate\SpezialSliderTemplate.csproj", "{74C65786-E4D7-4038-B967-45FCC5B663D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C65786-E4D7-4038-B967-45FCC5B663D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C65786-E4D7-4038-B967-45FCC5B663D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C65786-E4D7-4038-B967-45FCC5B663D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C65786-E4D7-4038-B967-45FCC5B663D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
