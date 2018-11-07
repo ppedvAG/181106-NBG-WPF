@@ -20,7 +20,7 @@ namespace BindingDemo
         {
             throw new NotImplementedException();
 
-            new SolidColorBrush(Color.FromRgb())
+           // new SolidColorBrush(Color.FromRgb())
 
         }
     }

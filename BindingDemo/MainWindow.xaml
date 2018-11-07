@@ -11,9 +11,25 @@
             <BooleanToVisibilityConverter x:Key="b2vConverter"/>
             <local:Farbconverter x:Key="colorConverter"/>
             <local:NamensConverter x:Key="NamensConverter"/>
+
+            <Style TargetType="Button" x:Key="buttonTemplateStyle">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!--Fill="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Background}"-->
+                                <Ellipse Height="50" Width="50"
+                                         Fill="{TemplateBinding Background}"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
         </Grid.Resources>
         <!-- ,StringFormat={}Wert:{0} -->
-        <TextBox x:Name="textBoxEingabe" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxEingabe" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="labelEingabe"
                Content="{Binding ElementName=textBoxEingabe,Path=Text,Mode=TwoWay}"
                HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="120"/>
@@ -44,6 +60,77 @@
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>
+        <Slider x:Name="textBoxR" TickFrequency="1" IsSnapToTickEnabled="True" TickPlacement="TopLeft" HorizontalAlignment="Left" Height="23" Margin="649,18,0,0" Minimum="0" Maximum="255" Value="0" VerticalAlignment="Top" Width="120"/>
+        <Slider x:Name="textBoxG" TickFrequency="1" IsSnapToTickEnabled="True" TickPlacement="TopLeft" HorizontalAlignment="Left" Height="23" Margin="649,55,0,0" Minimum="0" Maximum="255" Value="100" VerticalAlignment="Top" Width="120"/>
+        <Slider x:Name="textBoxB" TickFrequency="1" IsSnapToTickEnabled="True" TickPlacement="TopLeft" HorizontalAlignment="Left" Height="23" Margin="649,91,0,0" Minimum="0" Maximum="255" Value="255" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="labelRGB"
+            HorizontalAlignment="Left" Margin="649,125,0,0" VerticalAlignment="Top" Width="120">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}# {0:x2} {1} {2}">
+                    <Binding ElementName="textBoxR" Path="Value"/>
+                    <Binding ElementName="textBoxG" Path="Value"/>
+                    <Binding ElementName="textBoxB" Path="Value"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <Rectangle Fill="Blue" HorizontalAlignment="Left"
+                   Height="100"
+                   Margin="48,181,0,0" Stroke="Black" VerticalAlignment="Top"
+                   Width="{Binding RelativeSource={RelativeSource Mode=Self},Path=Height}"/>
+        <Grid Background="#00FF00" HorizontalAlignment="Left" Height="118" Margin="207,181,0,0" VerticalAlignment="Top" Width="198">
+            <Grid Background="#FF0000" HorizontalAlignment="Left" Height="100" Margin="36,10,0,0" VerticalAlignment="Top" Width="112">
+                <Grid Background="#0000FF" HorizontalAlignment="Left" Height="43" Margin="22,47,0,0" VerticalAlignment="Top" Width="80">
+                    <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Grid,AncestorLevel=3},Path=Background}" Foreground="White" Margin="10,0,0,1"/>
+                </Grid>
+            </Grid>
+
+        </Grid>
+        <Button Style="{StaticResource buttonTemplateStyle}"
+                Content="Button"
+                Background="Red"
+                HorizontalAlignment="Left"
+                Margin="431,221,0,0"
+                VerticalAlignment="Top" Width="136" Height="49"/>
+        <ListBox x:Name="listBoxPersonen" HorizontalAlignment="Left" Height="207" Margin="567,181,0,0" VerticalAlignment="Top" Width="202">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Vorname}"/>
+                        <TextBlock Text="{Binding Nachname}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="35,338,0,0" TextWrapping="Wrap" Text="Komm her mit der Maus !!!" VerticalAlignment="Top" Height="50" Width="136">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="Green"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="Red"/>
+                            <Setter Property="FontSize" Value="25"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <CheckBox x:Name="checkBoxAGB" Content="Ich habe die AGBs gelesen und akzeptiert" HorizontalAlignment="Left" Margin="238,332,0,0" VerticalAlignment="Top"/>
+        <Button HorizontalAlignment="Left" Margin="238,358,0,0" VerticalAlignment="Top" Width="152">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Setter Property="Content" Value="AGB LESEN !!!!"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=checkBoxAGB,Path=IsChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                            <Setter Property="Content" Value="Installation Fortsetzen"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label HorizontalAlignment="Left" Margin="500,365,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>

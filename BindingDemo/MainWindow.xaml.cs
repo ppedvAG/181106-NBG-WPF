@@ -23,6 +23,14 @@ namespace BindingDemo
         public MainWindow()
         {
             InitializeComponent();
+
+            listBoxPersonen.ItemsSource = new List<Person>()
+            {
+                new Person{Vorname="Tom",Nachname="Ate",Alter=10,Kontostand=100.55m},
+                new Person{Vorname="Anna",Nachname="Nass",Alter=20,Kontostand=400.55m},
+                new Person{Vorname="Peter",Nachname="Silie",Alter=30,Kontostand=1210.55m},
+                new Person{Vorname="Franz",Nachname="Ose",Alter=40,Kontostand=-12300.55m}
+            };
         }
     }
 }
