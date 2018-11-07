@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleDemo", "StyleDemo\Styl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpezialSliderTemplate", "SpezialSliderTemplate\SpezialSliderTemplate.csproj", "{74C65786-E4D7-4038-B967-45FCC5B663D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingDemo", "BindingDemo\BindingDemo.csproj", "{0DC12AD7-E950-4E80-83D2-DB3590840145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{74C65786-E4D7-4038-B967-45FCC5B663D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74C65786-E4D7-4038-B967-45FCC5B663D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74C65786-E4D7-4038-B967-45FCC5B663D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DC12AD7-E950-4E80-83D2-DB3590840145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC12AD7-E950-4E80-83D2-DB3590840145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC12AD7-E950-4E80-83D2-DB3590840145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC12AD7-E950-4E80-83D2-DB3590840145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

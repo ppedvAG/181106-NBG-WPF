@@ -1,0 +1,28 @@
+﻿<Window x:Class="BindingDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindingDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="b2vConverter"/>
+            <local:Farbconverter x:Key="colorConverter"/>
+        </Grid.Resources>
+        
+        <TextBox x:Name="textBoxEingabe" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="labelEingabe"
+               Content="{Binding ElementName=textBoxEingabe,Path=Text,Mode=TwoWay}"
+               HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="120"/>
+        <Slider Minimum="0" Maximum="100" 
+                Value="{Binding ElementName=labelEingabe,Path=Content}"
+                HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxFarbe" HorizontalAlignment="Left" Height="23" Margin="165,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Rectangle Visibility="{Binding ElementName=checkBoxSichtbar,Path=IsChecked,Converter={StaticResource b2vConverter}}" 
+                   Fill="{Binding ElementName=textBoxFarbe,Path=Text,Converter={StaticResource colorConverter}}" HorizontalAlignment="Left" Height="100" Margin="165,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <CheckBox x:Name="checkBoxSichtbar" Content="Rectangle sichtbar?" HorizontalAlignment="Left" Margin="165,143,0,0" VerticalAlignment="Top" Width="130"/>
+
+    </Grid>
+</Window>
