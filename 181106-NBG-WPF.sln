@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutUndSteuerelemente", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ressourcen", "Ressourcen\Ressourcen.csproj", "{27FCF473-8D9E-4164-ADED-2EF8A1FA804D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleDemo", "StyleDemo\StyleDemo.csproj", "{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{27FCF473-8D9E-4164-ADED-2EF8A1FA804D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27FCF473-8D9E-4164-ADED-2EF8A1FA804D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27FCF473-8D9E-4164-ADED-2EF8A1FA804D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF81D370-6A56-4CE5-A3D1-4840B16E1AB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

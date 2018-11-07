@@ -24,5 +24,29 @@ namespace Ressourcen
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LinearGradientBrush color = (sender as Button).FindResource("DefaultButtonColor") as LinearGradientBrush;
+            color.GradientStops[0].Color = Colors.MediumPurple;
+        }
+
+        private void buttonDynamic_Click(object sender, RoutedEventArgs e)
+        {
+            buttonDynamic.Resources["DefaultButtonColor"] = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+            // stackPanelContainer.Resources["DefaultButtonColor"] = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //    (sender as Button).Style = gridAlles.Resources["Style1"] as Style;
+
+            //    (sender as Button).Style = gridAlles.Resources["Style2"] as Style;
+
+            SolidColorBrush color = (sender as Button).FindResource("Farbe") as SolidColorBrush;
+            color.Color = Colors.MediumPurple;
+
+            // (gridAlles.Resources["Farbe"] as SolidColorBrush).Color = Colors.MediumPurple;
+        }
     }
 }

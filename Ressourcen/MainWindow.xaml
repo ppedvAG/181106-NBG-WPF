@@ -6,7 +6,62 @@
         xmlns:local="clr-namespace:Ressourcen"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="gridAlles" Background="PaleGreen">
+        <Grid.Resources>
+            <LinearGradientBrush x:Key="DefaultButtonColor">
+                <GradientStop Offset="0" Color="LavenderBlush"/>
+                <GradientStop Offset="1" Color="Tan"/>
+            </LinearGradientBrush>
+            
+            <SolidColorBrush x:Key="Farbe" Color="Red"/>
+
+            <Style TargetType="Button" x:Key="ButtonStyle">
+                <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="Foreground" Value="Linen"/>
+                <Setter Property="Background" Value="{StaticResource Farbe}"/>
+                <!-- Nicht mehr änderbar, da es in einem Style genutzt wird -->
+            </Style>
+
+            <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}" x:Key="BasedOnStyle">
+                <Setter Property="BorderBrush" Value="Blue"/>
+                <Setter Property="BorderThickness" Value="10"/>
+            </Style>
+        </Grid.Resources>
+
+
+        <StackPanel x:Name="stackPanelContainer" Background="Cornsilk" HorizontalAlignment="Left" Height="236" Margin="37,26,0,0" VerticalAlignment="Top" Width="232">
+            <StackPanel.Resources>
+                <SolidColorBrush x:Key="DefaultButtonColor" Color="DarkSlateGray"/>
+            </StackPanel.Resources>
+
+            <Button x:Name="buttonDynamic" Background="{DynamicResource DefaultButtonColor}"
+                Content="Klick mich !" Margin="5" FontSize="30" Click="buttonDynamic_Click" >
+                <Button.Resources>
+                    <SolidColorBrush x:Key="DefaultButtonColor" Color="LightSeaGreen"/>
+                </Button.Resources>
+            </Button>
+
+        </StackPanel>
+        <StackPanel Background="Gold" HorizontalAlignment="Left" Height="236" Margin="518,26,0,0" VerticalAlignment="Top" Width="232">
+            <Button x:Name="buttonStatic" Click="Button_Click" Background="{StaticResource DefaultButtonColor}"
+                    Content="Drück mich !" Margin="5" FontSize="30"/>
+
+        </StackPanel>
+        <Button Content="Button im Grid"
+                FontFamily="Impact"
+                FontSize="25"
+                Foreground="LightSlateGray"
+                BorderBrush="Black"
+                BorderThickness="3"
+                Background="{StaticResource DefaultButtonColor}"
+                HorizontalAlignment="Left"
+                Margin="310,62,0,0"
+                VerticalAlignment="Top"
+                Width="186"
+                Height="70"
+                Style="{StaticResource ButtonStyle}"/>
+
+        <Button Style="{StaticResource BasedOnStyle}" Content="Button" HorizontalAlignment="Left" Margin="338,164,0,0" VerticalAlignment="Top" Width="125" Click="Button_Click_1"/>
     </Grid>
 </Window>

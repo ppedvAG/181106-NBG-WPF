@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:Ressourcen"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="DefaultButtonColor" Color="Salmon"/>
+
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Mistral"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Foreground" Value="IndianRed"/>
+            <Setter Property="Background" Value="{StaticResource DefaultButtonColor}"/>
+        </Style>
+
     </Application.Resources>
 </Application>
