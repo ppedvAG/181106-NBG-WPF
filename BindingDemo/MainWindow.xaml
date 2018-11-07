@@ -10,8 +10,9 @@
         <Grid.Resources>
             <BooleanToVisibilityConverter x:Key="b2vConverter"/>
             <local:Farbconverter x:Key="colorConverter"/>
+            <local:NamensConverter x:Key="NamensConverter"/>
         </Grid.Resources>
-        
+        <!-- ,StringFormat={}Wert:{0} -->
         <TextBox x:Name="textBoxEingabe" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="labelEingabe"
                Content="{Binding ElementName=textBoxEingabe,Path=Text,Mode=TwoWay}"
@@ -23,6 +24,26 @@
         <Rectangle Visibility="{Binding ElementName=checkBoxSichtbar,Path=IsChecked,Converter={StaticResource b2vConverter}}" 
                    Fill="{Binding ElementName=textBoxFarbe,Path=Text,Converter={StaticResource colorConverter}}" HorizontalAlignment="Left" Height="100" Margin="165,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
         <CheckBox x:Name="checkBoxSichtbar" Content="Rectangle sichtbar?" HorizontalAlignment="Left" Margin="165,143,0,0" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="textBoxVorname" HorizontalAlignment="Left" Height="23" Margin="350,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxNachname" HorizontalAlignment="Left" Height="23" Margin="350,38,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="labelGanzerName"
+            HorizontalAlignment="Left" Margin="350,69,0,0" VerticalAlignment="Top" Width="217">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}GanzerName: {0} {1}">
+                    <Binding ElementName="textBoxVorname" Path="Text"/>
+                    <Binding ElementName="textBoxNachname" Path="Text"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <TextBlock x:Name="labelGanzerName_Converter"
+            HorizontalAlignment="Left" Margin="350,90,0,0" VerticalAlignment="Top" Width="217">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource NamensConverter}">
+                    <Binding ElementName="textBoxVorname" Path="Text"/>
+                    <Binding ElementName="textBoxNachname" Path="Text"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
 
     </Grid>
 </Window>
