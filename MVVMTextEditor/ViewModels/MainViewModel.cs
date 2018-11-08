@@ -10,9 +10,9 @@ namespace MVVMTextEditor.ViewModels
 {
     class MainViewModel : BaseViewModel
     {
-        public MainViewModel()
+        public MainViewModel(FileService service)
         {
-            service = new FileService();
+            this.service = service;
             SaveCommand = new RelayCommand(SaveFile);
             LoadCommand = new RelayCommand(LoadFile);
         }

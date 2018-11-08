@@ -6,10 +6,8 @@
         xmlns:local="clr-namespace:MVVMTextEditor"
         xmlns:vm="clr-namespace:MVVMTextEditor.ViewModels"
         mc:Ignorable="d"
-        Title="MVVM - Editor" Height="300" Width="300">
-    <Window.DataContext>
-        <vm:MainViewModel/>
-    </Window.DataContext>
+        Title="MVVM - Editor" Height="300" Width="300"
+        DataContext="{Binding Source={StaticResource Locator},Path=Main}">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Datei">
