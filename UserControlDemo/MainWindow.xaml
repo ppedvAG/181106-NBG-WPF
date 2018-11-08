@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserControlDemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="242" Width="384">
     <Grid>
-        
+        <local:LabledTextBox Label="Vorname:"  HorizontalAlignment="Left" Height="28" Margin="31,20,0,0" VerticalAlignment="Top" Width="298"/>
+        <local:LabledTextBox Label="Nachname: "  Text="Hallo Welt" HorizontalAlignment="Left" Height="28" Margin="31,53,0,0" VerticalAlignment="Top" Width="298"/>
+        <local:LabledTextBox Label="Alter:" Text="{Binding ElementName=sliderWert,Path=Value}"  HorizontalAlignment="Left" Height="28" Margin="31,86,0,0" VerticalAlignment="Top" Width="298"/>
+        <Slider x:Name="sliderWert" HorizontalAlignment="Left" Margin="31,135,0,0" VerticalAlignment="Top" Width="298"/>
+
     </Grid>
 </Window>
