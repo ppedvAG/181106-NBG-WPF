@@ -24,5 +24,10 @@ namespace UserControlDemo
         {
             InitializeComponent();
         }
+
+        private void LabledTextBox_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Klick - aus der LabledTextBox");
+        }
     }
 }

@@ -27,6 +27,8 @@ namespace UserControlDemo
             this.DataContext = this;
         }
 
+        public event EventHandler Click;
+
         private Regex r = new Regex(@"\D+");
         // propdp - Dependency-Property erstellen
         public string Text
@@ -53,6 +55,11 @@ namespace UserControlDemo
                 textBlockValidationError.Visibility = Visibility.Visible;
             else
                 textBlockValidationError.Visibility = Visibility.Hidden;
+        }
+
+        private void DockPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Click?.Invoke(this, e);
         }
     }
 }
