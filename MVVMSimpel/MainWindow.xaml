@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMSimpel"
+        xmlns:vm="clr-namespace:MVVMSimpel.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MVVM - Beispiel" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <DockPanel Margin="5">
+        <Button DockPanel.Dock="Top" Content="Personen laden" Command="{Binding GetPersonenCommand}" />
+        <DataGrid ItemsSource="{Binding Personenliste}" />
+    </DockPanel>
 </Window>
