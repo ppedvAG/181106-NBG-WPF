@@ -10,6 +10,7 @@
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
+
     <DockPanel Margin="5">
         <Button DockPanel.Dock="Top" Content="Personen laden" Command="{Binding GetPersonenCommand}" />
         <DataGrid ItemsSource="{Binding Personenliste}" />
