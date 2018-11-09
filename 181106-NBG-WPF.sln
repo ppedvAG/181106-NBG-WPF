@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLight_Demo", "MVVMLight
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControlDemo", "UserControlDemo\UserControlDemo.csproj", "{EC274496-E0E6-4560-B78E-DACB0378BC37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlendDemo", "BlendDemo\BlendDemo.csproj", "{6E30D29A-5B55-4E24-9ABE-C316698335BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validierung", "Validierung\Validierung.csproj", "{18863D92-D281-43D5-B563-CCC96F58FD9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{EC274496-E0E6-4560-B78E-DACB0378BC37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC274496-E0E6-4560-B78E-DACB0378BC37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC274496-E0E6-4560-B78E-DACB0378BC37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E30D29A-5B55-4E24-9ABE-C316698335BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E30D29A-5B55-4E24-9ABE-C316698335BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E30D29A-5B55-4E24-9ABE-C316698335BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E30D29A-5B55-4E24-9ABE-C316698335BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18863D92-D281-43D5-B563-CCC96F58FD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18863D92-D281-43D5-B563-CCC96F58FD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18863D92-D281-43D5-B563-CCC96F58FD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18863D92-D281-43D5-B563-CCC96F58FD9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
