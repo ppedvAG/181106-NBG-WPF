@@ -4,11 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Fotoalbum.ViewModels
 {
-    class MainViewModel : BaseViewModel
+    public class MainViewModel : BaseViewModel
     {
         public MainViewModel()
         {
@@ -17,6 +18,7 @@ namespace Fotoalbum.ViewModels
             GetFotosFromAlbumCommand = new RelayCommand(GetFotosFromAlbum);
             SearchtextChangedCommand = new RelayCommand(FilterAlbum);
         }
+
 
         private void FilterAlbum()
         {

@@ -8,28 +8,37 @@ using System.Threading.Tasks;
 
 namespace Fotoalbum.Models
 {
-    class FotoService
+    public class FotoService
     {
+        private List<Foto> fotocache;
+        private List<Album> albumcache;
         public List<Foto> GetAllFotos()
         {
+            if (fotocache != null)
+                return fotocache;
+
             string json;
             using (HttpClient client = new HttpClient())
             {
                 json = client.GetStringAsync("https://jsonplaceholder.typicode.com/photos").Result;
             }
 
-            return JsonConvert.DeserializeObject<List<Foto>>(json);
+            fotocache = JsonConvert.DeserializeObject<List<Foto>>(json);
+            return fotocache;
         }
 
         public List<Album> GetAllAlben()
         {
+            if (albumcache != null)
+                return albumcache;
             string json;
             using (HttpClient client = new HttpClient())
             {
                 json = client.GetStringAsync("https://jsonplaceholder.typicode.com/albums").Result;
             }
+            albumcache = JsonConvert.DeserializeObject<List<Album>>(json);
 
-            return JsonConvert.DeserializeObject<List<Album>>(json);
+            return albumcache;
         }
     }
 }

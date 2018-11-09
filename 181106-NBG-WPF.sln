@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validierung", "Validierung\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fotoalbum", "Fotoalbum\Fotoalbum.csproj", "{08AF272C-870B-4C84-A398-2E210956CED3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fotoalbum.Tests", "Fotoalbum.Tests\Fotoalbum.Tests.csproj", "{29388FFD-772D-4F7B-9D76-8884E6DC736E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{08AF272C-870B-4C84-A398-2E210956CED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08AF272C-870B-4C84-A398-2E210956CED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08AF272C-870B-4C84-A398-2E210956CED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29388FFD-772D-4F7B-9D76-8884E6DC736E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29388FFD-772D-4F7B-9D76-8884E6DC736E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29388FFD-772D-4F7B-9D76-8884E6DC736E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29388FFD-772D-4F7B-9D76-8884E6DC736E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

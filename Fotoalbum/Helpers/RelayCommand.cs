@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Fotoalbum.Helpers
 {
-    class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         public RelayCommand(Action execute, Func<bool> canExecute = null)
         {

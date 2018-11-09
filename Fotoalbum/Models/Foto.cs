@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fotoalbum.Models
 {
-    class Foto
+    public class Foto
     {
         [JsonProperty("albumId")]
         public long AlbumId { get; set; }
