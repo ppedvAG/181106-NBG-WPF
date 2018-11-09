@@ -4,13 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Validierung"
+        xmlns:p="clr-namespace:Validierung.Properties"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox Text="{Binding ElementName=sliderWert,Path=Value,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="10,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277"/>
         <Slider x:Name="sliderWert" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="277"/>
-        
+
         <local:EmailTextBox Email="demo 12345" HorizontalAlignment="Left" Height="20" Margin="10,76,0,0" VerticalAlignment="Top" Width="277"/>
+        <local:AgeTextBox  x:Name="ageBox" HorizontalAlignment="Left" Height="24" Margin="10,101,0,0" VerticalAlignment="Top" Width="277"/>
+        <Slider Value="{Binding ElementName=ageBox,Path=Text}"  x:Name="sliderAge" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="277" Height="25"/>
+        <Label Content="{x:Static p:Resources.WelcomeText}" HorizontalAlignment="Left" Margin="345,38,0,0" VerticalAlignment="Top" Width="213"/>
+        <Label Content="{x:Static p:Resources.Description}" HorizontalAlignment="Left" Margin="345,72,0,0" VerticalAlignment="Top" Width="213"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="356,110,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Window>

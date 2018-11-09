@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlendDemo", "BlendDemo\Blen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validierung", "Validierung\Validierung.csproj", "{18863D92-D281-43D5-B563-CCC96F58FD9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fotoalbum", "Fotoalbum\Fotoalbum.csproj", "{08AF272C-870B-4C84-A398-2E210956CED3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{18863D92-D281-43D5-B563-CCC96F58FD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18863D92-D281-43D5-B563-CCC96F58FD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18863D92-D281-43D5-B563-CCC96F58FD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08AF272C-870B-4C84-A398-2E210956CED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08AF272C-870B-4C84-A398-2E210956CED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08AF272C-870B-4C84-A398-2E210956CED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08AF272C-870B-4C84-A398-2E210956CED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

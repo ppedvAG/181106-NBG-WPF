@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Description" xml:space="preserve">
-    <value>This is my Application</value>
+    <value>Это мое приложение</value>
   </data>
   <data name="WelcomeText" xml:space="preserve">
-    <value>Hello World</value>
+    <value>Привет, мир</value>
   </data>
 </root>
