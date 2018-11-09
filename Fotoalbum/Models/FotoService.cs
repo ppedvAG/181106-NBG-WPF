@@ -20,5 +20,16 @@ namespace Fotoalbum.Models
 
             return JsonConvert.DeserializeObject<List<Foto>>(json);
         }
+
+        public List<Album> GetAllAlben()
+        {
+            string json;
+            using (HttpClient client = new HttpClient())
+            {
+                json = client.GetStringAsync("https://jsonplaceholder.typicode.com/albums").Result;
+            }
+
+            return JsonConvert.DeserializeObject<List<Album>>(json);
+        }
     }
 }

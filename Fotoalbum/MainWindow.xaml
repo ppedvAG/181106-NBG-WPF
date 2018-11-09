@@ -4,9 +4,115 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fotoalbum"
+        xmlns:vm="clr-namespace:Fotoalbum.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <Storyboard x:Key="ShowFotosStoryboard">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="gridFotos">
+                <EasingThicknessKeyFrame KeyTime="0" Value="400,50"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.5" Value="50"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="HideFotosStoryboard">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="gridFotos">
+                <EasingThicknessKeyFrame KeyTime="0" Value="50"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.3" Value="400,50"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <i:Interaction.Triggers>
+        <i:EventTrigger>
+            <i:InvokeCommandAction Command="{Binding GetAlbenCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Selector.SelectionChanged" SourceName="listViewAlben">
+            <BeginStoryboard Storyboard="{StaticResource ShowFotosStoryboard}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="buttonZurück">
+            <BeginStoryboard Storyboard="{StaticResource HideFotosStoryboard}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid x:Name="gridRoot">
+        <Button x:Name="buttonZurück" Content="Zurück" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,20">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=gridFotos,Path=Margin}" Value="400,50">
+                            <Setter Property="Visibility" Value="Hidden"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
         
+        <DockPanel x:Name="dockPanelAlben" Margin="50">
+            <TextBox DockPanel.Dock="Top" Margin="0,10" Text="{Binding Searchtext,UpdateSourceTrigger=PropertyChanged}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding SearchtextChangedCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBox>
+            <ListView x:Name="listViewAlben" 
+                      ItemsSource="{Binding Alben}"
+                      SelectedItem="{Binding CurrentSelectedAlbum,Mode=OneWayToSource}"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- IsEnabled auf False setzen um das Selektieren des Stackpanels zu verhindern -->
+                        <ListViewItem IsEnabled="False">
+                            <StackPanel ToolTip="{Binding Title}">
+                                <Image Source="Icons\folder.png" Height="50" Width="50"/>
+                                <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis" Width="100"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction 
+                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window} ,Path=DataContext.GetFotosFromAlbumCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListView>
+        </DockPanel>
+        <Grid x:Name="gridFotos" Margin="400,50">
+            <ListView ItemsSource="{Binding FotosAusAktuellemAlbum}"
+                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ListViewItem>
+                            <StackPanel ToolTip="{Binding Title}">
+                                <Image Source="{Binding ThumbnailUrl}" Height="50" Width="50"/>
+                                <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis" Width="100"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </Grid>
     </Grid>
+
 </Window>
