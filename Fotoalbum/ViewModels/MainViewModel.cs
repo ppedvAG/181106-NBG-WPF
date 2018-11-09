@@ -11,9 +11,9 @@ namespace Fotoalbum.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public MainViewModel()
+        public MainViewModel(FotoService service)
         {
-            service = new FotoService();
+            this.service = service;
             GetAlbenCommand = new RelayCommand(GetAllAlben);
             GetFotosFromAlbumCommand = new RelayCommand(GetFotosFromAlbum);
             SearchtextChangedCommand = new RelayCommand(FilterAlbum);

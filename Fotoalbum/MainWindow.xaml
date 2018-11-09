@@ -7,7 +7,8 @@
         xmlns:vm="clr-namespace:Fotoalbum.ViewModels"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding Source={StaticResource Locator},Path=GetMainViewModel,Mode=OneTime}">
     <Window.Resources>
         <Storyboard x:Key="ShowFotosStoryboard">
             <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="gridFotos">
@@ -22,9 +23,6 @@
             </ThicknessAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    <Window.DataContext>
-        <vm:MainViewModel/>
-    </Window.DataContext>
     <i:Interaction.Triggers>
         <i:EventTrigger>
             <i:InvokeCommandAction Command="{Binding GetAlbenCommand}"/>
@@ -113,6 +111,7 @@
                 </ListView.ItemsPanel>
             </ListView>
         </Grid>
+        <Button Content="Duplicate" HorizontalAlignment="Left" Margin="669,26,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 
 </Window>

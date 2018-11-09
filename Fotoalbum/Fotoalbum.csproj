@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\ViewModelLocator.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Foto.cs" />
     <Compile Include="Models\FotoService.cs" />
